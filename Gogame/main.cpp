@@ -19,6 +19,7 @@ int main(int argc, char** argv)
     
     int newCap = 0;
     
+    bool passe = false;
     bool fini = false;
     while(!fini)
     {
@@ -32,6 +33,15 @@ int main(int argc, char** argv)
                 cin >> choixj;
             }
         } while(choixi != -1 && choixj != -1 && !jouerCoup(jeu, choixi-1, choixj-1, noir, newCap));
+        if (choixi == -1 || choixj == -1){
+            if (passe){
+                fini = true;
+                continue;
+            }
+            passe = true;
+        } else {
+            passe = false;
+        }
         scoreNo += newCap;
         newCap = 0;
         afficher(jeu);
@@ -44,6 +54,14 @@ int main(int argc, char** argv)
                 cin >> choixj;
             }
         } while(choixi != -1 && choixj != -1 && !jouerCoup(jeu, choixi-1, choixj-1, blanc, newCap));
+        if (choixi == -1 || choixj == -1){
+            if (passe){
+                fini = true;
+            }
+            passe = true;
+        } else {
+            passe = false;
+        }
         scoreBl += newCap;
         afficher(jeu);
     }

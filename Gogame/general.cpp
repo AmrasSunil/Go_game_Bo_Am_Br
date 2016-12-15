@@ -55,11 +55,12 @@ bool jouerCoup(Case plateau[TAILLE][TAILLE], int i, int j, Case joueur, int &nbC
     //vérifie que le coup est possible
     if(i>=0 && i<TAILLE && j>=0 && j<TAILLE){
         if (plateau[i][j]==vide){
+            nbCapture = 0;
             capture(plateau, i, j, joueur, nbCapture);
             if(nbCapture != 0 || nonSuicide(plateau, i, j, joueur))
             {
                 plateau[i][j] = joueur;
-                cout<< nbCapture << "Pierres ont ete capturees"<<endl;
+                cout<< nbCapture << " Pierres ont ete capturees"<<endl;
                 return true;
             }
         } else {
@@ -110,8 +111,7 @@ bool nonSuicide(Case plateau[TAILLE][TAILLE], int i, int j, Case joueur)
             }
         }
     }
-    cout << "Position suicidaire"<<endl;
-    
+    cout << "Pierre en danger"<<endl;
     return false;
 }
 

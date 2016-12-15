@@ -66,13 +66,11 @@ TEST(PositionJouable, HorsLimites){
  
  TEST(Points, capture){
      initGoban(jeu_TEST);
-     jeu_TEST[0][1] = blanc;
      nbCap = 0;
-     capture(jeu_TEST, 0, 1, blanc, nbCap);
+     jouerCoup(jeu_TEST, 0, 1, blanc, nbCap);
      EXPECT_EQ(0, nbCap);
-     jouerCoup(jeu_TEST, 0, 0, noir, nbCap);
-     jeu_TEST[1][0] = blanc;
-     capture(jeu_TEST, 1, 0, blanc,nbCap);
+     jeu_TEST[0][0] = noir;
+     jouerCoup(jeu_TEST, 1, 0, blanc,nbCap);
      EXPECT_EQ(1, nbCap);
      
      jouerCoup(jeu_TEST, 2, 0, blanc, nbCap);
@@ -92,9 +90,8 @@ TEST(PositionJouable, HorsLimites){
      jouerCoup(jeu_TEST, 2, 2, noir, nbCap);
      jouerCoup(jeu_TEST, 3, 1, noir, nbCap);
      jouerCoup(jeu_TEST, 3, 2, noir, nbCap);
-     jeu_TEST[1][3] = blanc;
-     capture(jeu_TEST, 1, 3, blanc, nbCap);
-     EXPECT_EQ(4, nbCap);
+     jouerCoup(jeu_TEST, 1, 3, blanc, nbCap);
+     EXPECT_EQ(3, nbCap);
      EXPECT_EQ(vide, jeu_TEST[1][4]);
  }
  

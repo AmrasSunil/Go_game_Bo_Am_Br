@@ -26,18 +26,24 @@ int main(int argc, char** argv)
         cout << "Tour du Joueur Noir" << endl;
         do
         {
-            cout << "Entrez une position valide (ligne puis colonne)" << endl;
-            cin >> choixi >> choixj;
-        } while(!jouerCoup(jeu, choixi-1, choixj-1, noir, newCap));
+            cout << "Entrez une position valide (ligne puis colonne) ou -1 pour passer" << endl;
+            cin >> choixi;
+            if(choixi != -1){
+                cin >> choixj;
+            }
+        } while(choixi != -1 && choixj != -1 && !jouerCoup(jeu, choixi-1, choixj-1, noir, newCap));
         scoreNo += newCap;
         newCap = 0;
         afficher(jeu);
         cout << "Tour du Joueur Blanc" << endl;
         do
         {
-            cout << "Entrez une position valide (ligne puis colonne)" << endl;
-            cin >> choixi >> choixj;
-        } while(!jouerCoup(jeu, choixi-1, choixj-1, blanc, newCap));
+            cout << "Entrez une position valide (ligne puis colonne) ou -1 pour passer" << endl;
+            cin >> choixi;
+            if(choixi != -1){
+                cin >> choixj;
+            }
+        } while(choixi != -1 && choixj != -1 && !jouerCoup(jeu, choixi-1, choixj-1, blanc, newCap));
         scoreBl += newCap;
         afficher(jeu);
     }

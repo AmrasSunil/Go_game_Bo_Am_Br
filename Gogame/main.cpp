@@ -24,6 +24,8 @@ int main(int argc, char** argv)
     while(!fini)
     {
         newCap = 0;
+        cout << "Scores :"<< endl;
+        cout << "Noir " << scoreNo << " - " << scoreBl << " Blanc"<<endl<<endl;
         cout << "Tour du Joueur Noir" << endl;
         do
         {

@@ -8,7 +8,6 @@ int nbCap;
 
 int main (int argc, char** argv)
 {
-  cout << "hello" << endl;
   ::testing::InitGoogleTest (&argc, argv);
   
   return RUN_ALL_TESTS();
@@ -66,7 +65,23 @@ TEST(PositionJouable, HorsLimites){
      EXPECT_FALSE(jeu_TEST.jouerCoup(2, 1, noir, nbCap));
      
  }
+ /*
+ TEST(Deroulement, tour){
+     Plateau jeu_TEST;
+     bool passe = false;
+     cout<<"Entrez 1 puis 1"<<endl;
+     EXPECT_FALSE(jeu_TEST.Tour(blanc, nbCap, passe));
+     cout<<"Entrez -1"<<endl;
+     EXPECT_FALSE(jeu_TEST.Tour(blanc, nbCap, passe));
+ }
  
+ TEST(Deroulement, fin){
+     Plateau jeu_TEST;
+     bool passe = true;
+     cout<<"Entrez -1"<<endl;
+     EXPECT_TRUE(jeu_TEST.Tour(blanc, nbCap, passe));
+ }
+ */
  TEST(Points, capture){
      Plateau jeu_TEST;
      nbCap = 0;
